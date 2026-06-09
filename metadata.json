@@ -1,0 +1,6 @@
+{
+  "name": "gikspot Collective",
+  "description": "Interactive showcase and enterprise workspace for gikspot studio (media, music, fashion distro, YouTube expo) and gikspot labs (business, mentoring, vocational training). Features an interactive real-time AI Architecture Advisor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-gik-bg: #070a0e;
+  --color-gik-card: #0e131a;
+  --color-gik-accent: #00b4d8;
+  --color-gik-accent-bright: #00f2fe;
+  --color-gik-border: #1a2433;
+  --color-gik-muted: #475569;
+  --color-gik-light: #f1f5f9;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-gik-bg);
+    color: var(--color-gik-light);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar to look like an expert developer IDE */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070a0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a2433;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00b4d8;
+}
+
+/* Futuristic Tech Dot-Grid Overlay */
+.cyber-grid {
+  background-size: 32px 32px;
+  background-image: 
+    radial-gradient(circle, rgba(0, 180, 216, 0.07) 1px, transparent 1px);
+}
+
+/* Terminal Scanline/Flicker effect for aesthetic immersion */
+.terminal-glow {
+  text-shadow: 0 0 10px rgba(0, 180, 216, 0.5), 0 0 1px rgba(0, 180, 216, 0.8);
+}
+
+.terminal-border-glow {
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.05);
+  border-color: rgba(0, 180, 216, 0.15);
+}
+
+.glow-heavy {
+  box-shadow: 0 0 30px rgba(0, 180, 216, 0.15);
+}
+
+@keyframes pulse-cyan {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(0, 180, 216, 0.6));
+  }
+  50% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 2px rgba(0, 180, 216, 0.2));
+  }
+}
+
+.animate-pulse-cyan {
+  animation: pulse-cyan 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.scanline-effect {
+  position: relative;
+}
+
+.scanline-effect::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 180, 216, 0.12) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.005), rgba(0, 0, 255, 0.01));
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.35;
+}
+
+/* Glass cyber panel styling */
+.glass-panel {
+  background: rgba(14, 19, 26, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 180, 216, 0.15);
+}
+
+/* Animated glow line for top transitions */
+.glow-accent-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gik-accent), transparent);
+}
+
+/* Tech corners bracket aesthetic helper */
+.tech-corner-br {
+  position: relative;
+}
+.tech-corner-br::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 1.5px solid var(--color-gik-accent);
+  border-left: 1.5px solid var(--color-gik-accent);
+  pointer-events: none;
+}
+.tech-corner-br::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 1.5px solid var(--color-gik-accent);
+  border-right: 1.5px solid var(--color-gik-accent);
+  pointer-events: none;
+}
+
